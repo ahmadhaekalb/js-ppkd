@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Javascript</title>
+</head>
+<body>
+   <!-- array : struktur data yang bisa menyimpan datanya lebih dari 1 -->
+
+   <script>
+      let nama =["Budi", "Laras", "Andi"];
+      const keranjang = ["Buah", "Sayuran", "Ikan"];
+      console.log(nama);
+      console.log(nama[2]); // 2 = urutan data
+      console.log(keranjang);
+      console.log(keranjang[2]);
+
+      //mengganti isi array
+      nama[2] = "Agung";
+      console.log(nama);
+
+      //menambah isi variabel nama (bertambah di belakang)
+      nama.push('Raka');
+      console.log("nama baru : Raka", nama)
+
+      //menambah array di posisi depan
+      nama.unshift("Prabowo");
+      console.log("nama baru di depan: Prabowo", nama)
+
+      // indexOf <-- mencari posisi data tertentu
+      const target = nama.indexOf("Budi");
+      console.log(target);
+
+      // spread operator (...)
+      nama = [...nama, "Wawan"];
+      nama = ["Wawan", ...nama];
+      // diletakkan di array yang sama sesuai dengan posisi dimana ia ditambahkan
+      console.log(nama);
+
+
+      //length : count --> menghitung jumlah data
+      console.log("jumlah data pada array 'nama' sebanyak", nama.length, "data") // <-- menghitung jumlah data di variabel nama
+      console.log("jumlah data pada array 'keranjang' sebanyak", keranjang.length, "data") // <-- menghitung jumlah data di variabel keranjang
+
+
+   </script>
+</body>
+</html>

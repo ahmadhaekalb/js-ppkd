@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Document Object Model Part</title>
+</head>
+
+<body>
+  <h1 id="title">Teks Awal</h1>
+  <p id="description">Deskripsi Awal</p>
+  <p id="status">Status awal</p>
+  <div id="modul">
+    <p style="color: azure;">ADILI PRABOWO</p>
+  </div>
+  <ul id="modulul"></ul>
+  <script>
+    const body = document.body;
+    const title = document.getElementById('title');
+    const desc = document.getElementById('description');
+    const status = document.querySelector('#status');
+
+    body.style.background = "green";
+    title.style.color = "white";
+    title.innerText = "PPKD Jakarta Pusat";
+
+    status.style.color = "white";
+    status.innerText = "Tersertifikasi BNSP";
+    desc.style.color = "white";
+
+    // create element
+    const modul = document.getElementById('modul')
+    const modulul = document.getElementById('modulul')
+    //createElement() :
+    listUnit.forEach((unitText) => {
+      const itemLi = document.createElement('li')
+
+      itemLi.innerText = unitText;
+      itemLi.style.marginBottom="8px";
+      
+      modulul.appendChild(itemLi);
+
+    })
+    const isiModul = document.createElement('p');
+    isiModul.innerText = "Laravel adalah Bahasa yang Sulit";
+    isiModul.style.color = "white";
+    // appendChild
+    modul.appendChild(isiModul);
+
+    const listUnit = [
+      "GULINGKAN PRABOWO",
+      "ADILI JOKOWI",
+      "GIBRAN KASIH KOPI BIAR NGGA NGANTUK TERUS",
+    ];
+
+
+  </script>
+</body>
+
+</html>

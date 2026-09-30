@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praktikum Javascript</title>
+</head>
+
+<body>
+  <script>
+    // let = Nilai bisa diubah, tapi tdk boleh dideklrasikan ulang
+    // var = Sama seperti let, tapi rawan kebocoran
+    // const = Nilainya tetap (tidak bisa diubah)
+    let nama = "Anton";
+    //nama = "tes"
+    console.log(nama);
+
+    var alamat = "Bogor";
+    //var alamat = "Jakarta";
+    console.log(alamat);
+
+    const nilaiTetap = 10;
+    // nilaiTetap = 20;
+    console.log(nilaiTetap);
+
+    // Object & Immutability
+    // Object
+    const peserta = {
+      nama: "Tono"
+    };
+    peserta.alamat = "Kp.Sawah";
+    console.log(peserta);
+
+    //Immutability : membuat object baru menggunakan spred operator (...)
+    const pesertaBaru = { ...peserta, nim: "45637256278" };
+    console.log(pesertaBaru);
+
+    //1. String dan Template Literals
+    const namaDepan = "Joko";
+    const namaBelakang = "Widodo";
+    let literalsContoh = `
+      Nama Depan      : ${namaDepan}
+      Nama Belakang   : ${namaBelakang}
+      `;
+    console.log(namaDepan + " " + namaBelakang);
+    console.log(literalsContoh);
+
+    //Operator Aritmatika dan Assignment
+
+    let angkapertama = 1;
+    let angkakedua = 5;
+    console.log("Perkalian : " + angkapertama + "*" + angkakedua + "=" + parseInt(angkapertama * angkakedua));
+    console.log("Pembagian : " + angkapertama + "/" + angkakedua + "=" + angkapertama / angkakedua);
+
+    let a = 7;
+    a += 10; // a = a + 10 = 17
+    console.log(a);
+
+    //Operator perbandingan dan logika
+    let user = "hidupjokowi";
+    let password = "wiwokdetok";
+
+    if (user === "hidupjokowi" && password === "wiwokdetok")
+    {
+      console.log("Login Berhasil");
+    } else
+    {
+      console.log("Coba Lagi");
+    }
+    console.log("5 > 10 :", + 5 > 10);//false
+    console.log("5 < 10 :", + 5 < 10);//true
+
+    //if ternary
+
+    let umur = 20;
+    if (umur >= 17)
+    {
+      console.log("Punya KTP");
+    } else
+    {
+      console.log("Belum Punya KTP");
+    }
+    let tenaryyy = (umur >= 17) ? "Punya KTP" : "Belum Punya KTP";
+    console.log(tenaryyy);
+
+    // Switch Case
+    const username = "admin";
+    switch (username)
+    {
+      case "pimpinan":
+        console.log("ini pimpinan");
+        break;
+      case "kasir":
+        console.log("ini kasir");
+        break;
+      case "admin":
+        console.log("ini admin");
+        break;
+      default:
+        break;
+    }
+
+    // Function
+    function demoScope() {
+
+      if (true)
+      {
+        var varVariable = "Saya adalah var (Function Scope)";
+        let letVariable = "Saya let (Block Scope)";
+        const constVariable = "Saya konstanta/const (Block Scope)";
+      }
+      //console.log(varVariable);
+      //console.log(letVariable);
+      //console.log(constVariable);
+    }
+    demoScope();
+
+    //Traditional Function Expression (ES5)
+    const squareES5 = function (x) {
+      return x * x;
+    };
+    console.log(squareES5(4));
+
+    const squareES6 = (x) => {
+      return x * x;
+    };
+    console.log(squareES6(4));
+
+    // ARROW FUNCTION (ES6+) -IMPLICIT RETURN
+    const squareES6implicit = (x) => x * x;
+    console.log(squareES6implicit(4));
+
+    // Pengunaan pada method array
+    const fruits = ["apel", "nanas", "durian"];
+    const squareFruits = fruits.map((fruit) => fruit);
+    console.log(squareFruits);
+
+    // Looping for, while, do.. while..
+    for (let index = 1; index <= 5; index++) {
+      console.log("Perulangan ke- " + index);
+
+    }
+    let no = 6;
+    while (no <= 5){
+        console.log(`Ini Nomor Ke- ${no}`);
+        no++;
+    }
+    
+    let x=6;
+    do{
+      console.log(`Nilai x = ${x}`);
+      x++;
+    } while (x <= 5);
+    
+
+  </script>
+  <b>Praktikum JS, Lihat di bagian console</b>
+</body>
+
+</html>

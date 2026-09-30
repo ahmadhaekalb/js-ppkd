@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Document Object Model</title>
+</head>
+<body>
+  <h1 id="heading_id" class="heading_class">Selamat Datang di PPKD Jakarta Pusat</h1>
+  <p id="isiText" class="isiTextini"></p>
+  <h3>Tes 1</h3>
+  <h3>Tes 2</h3>
+  <h3>Tes 3</h3>
+  <script>
+
+      const heading = document.querySelector('h1');
+      const heading_id = document.getElementById('heading_id');
+      const heading_class = document.getElementsByClassName('heading_class');
+      const heading3 = document.querySelector('h3');
+      const heading3All = document.querySelectorAll('h3');
+      console.log(heading3All);
+
+      /* cara lain untuk memilih
+      const heading = document.querySelector('h1'); <-- memanggil kueri atau tag h1
+      const heading = document.querySelector('#heading_id'); <-- memanggil id
+      const heading = document.querySelector('.heading_class'); <-- memanggil class
+      
+      */
+
+      //innerText :
+      // textContent:
+      //innerHtml
+      heading.innerText = "Selamat Datang di PPKD Jakarta Pusat"
+      heading.textContent= "Selamat Datang di PPKD Jakarta Pusat"
+      heading.innerHTML= "Selamat Datang di <b>PPKD Jakarta Pusat</b>"
+
+      document.getElementById('isiText').innerText = "PPKD Jakarta Pusat";
+      heading3.innerText = "DUARRR WOWO"
+
+    let peserta ={
+      nama: "Haekal",
+      alamat: "Citayam",
+      jurusan:"Web Programming",
+    }
+    console.log(peserta); //<-- memanggil isi object secara menyeluruh
+    console.log(peserta.nama); //<-- memanggil isi variabel nama dalam key peserta
+    console.log(peserta.jurusan); //<-- memanggil isi variabel jurusan dalam key peserta
+    console.log(peserta["alamat"]); //<-- memanggil isi variabel alamat dalam key peserta
+
+    peserta.nilai = 80;
+    console.log(peserta); //<-- menambah variabel nilai dalam key peserta
+
+    delete peserta.nilai; //menghapus variabel nilai
+    peserta.status = "baru"; //<-- mengganti variabel nilai menjadi status
+    peserta['email'] = "hkl@yahoo.com"; //<-- gunakan bracket [''] agar bisa pake spasi
+    console.log(peserta);
+
+    const siswa = [
+      {
+        id: 1,
+        nama: "Rusdi",
+        nilai: 80
+      },
+      {
+        id:2,
+        nama: "Wawan",
+        nilai: 74
+      },
+      {
+        id: 3,
+        nama: "Ratna",
+        nilai: 70
+      }
+    ]
+    console.log(siswa);
+    
+    //looping: foreach
+    siswa.forEach(function(data, index){ // <-- data : alias dari variabel siswa , index : urutan data dari 0 (0,1,2,dst.)
+      console.log("siswa", data);
+    });
+    siswa.forEach((data, index) => { // <-- arrow function
+      console.log("data siswa", data);
+      console.log(`data siswa dengan index ${index} yaitu bernama ${data.nama}`);
+    })
+
+    const siswaLulus=siswa.filter((s) => {
+        return s.nilai >=75;
+    })
+
+    console.log(siswaLulus);
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logika If dan Switch Case</title>
+</head>
+<body>
+  <script>
+
+        const nilai = 50;
+        const lulus = 75;
+        if (nilai >= lulus){
+          console.log("Selamat!");
+        } else {
+          console.log("Yah!");
+        }
+
+        const warna = "biru";
+        if(warna === "Biru") {
+          console.log("Ini biru");
+        } else {
+          console.log("Ini bukan biru");
+        }
+
+        // banyak if, pengecekan banyak statement dan kondisi
+        // else if
+    const totalBelanja =1000000;
+    const isMember=false;
+    let diskoon=0;
+
+    if(isMember|| totalBelanja >=2000000){
+        diskon=0.1; //Diskon 10%
+    }else if(totalBelanja >=500000){
+        diskon=0.2 //diskon 20%;
+    }else{
+        persen=diskon;
+    }
+
+    const potongan = totalBelanja * diskon;
+    const bayar = totalBelanja - potongan;
+
+    // Template literal
+    //``:backtik
+
+    console.log("Potongan harga :" + potongan)
+    console.log(`Potongan harga : ${potongan}`)
+    console.log(`Total Bayar :${bayar}`)
+
+    // switch case
+
+    const color = "biru";
+    switch(color){
+      case "biru":
+        console.log("Ini biru");
+      break;
+      case "merah":
+        console.log("Ini Merah");
+      break;
+      default:
+        console.log("Ini bukan biru");
+    }
+
+    
+
+
+  </script>
+</body>
+</html>
